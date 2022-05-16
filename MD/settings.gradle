@@ -1,10 +1,26 @@
+<<<<<<< HEAD
+=======
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+>>>>>>> eac12d94e5433e780618f47340623efc8e2cadac
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+<<<<<<< HEAD
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Meds App"
+=======
+    }
+}
+rootProject.name = "MedsApp"
+>>>>>>> eac12d94e5433e780618f47340623efc8e2cadac
 include ':app'
