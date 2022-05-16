@@ -2,7 +2,7 @@
  
 # Bangkit-C22-PS221-Product-Based-Capstone
 
-## The 
+## The Gang
 
 Name | Bangkit ID | Learning Path
 :---|:---:|---:
