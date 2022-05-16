@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name">Meds App</string>
+=======
     <string name="app_name">MedsApp</string>
+>>>>>>> eac12d94e5433e780618f47340623efc8e2cadac
 </resources>

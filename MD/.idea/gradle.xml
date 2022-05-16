@@ -6,7 +6,10 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
+=======
         <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6" />
+>>>>>>> eac12d94e5433e780618f47340623efc8e2cadac
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
