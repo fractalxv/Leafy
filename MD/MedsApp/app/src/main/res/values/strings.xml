@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MedsApp</string>
+    <string name="leafy">L E A F Y</string>
+    <string name="welcome">Welcome</string>
 </resources>
