@@ -2,4 +2,8 @@
     <string name="app_name">MedsApp</string>
     <string name="leafy">L E A F Y</string>
     <string name="welcome">Welcome</string>
+    <string name="start">START</string>
+    <string name="about">About</string>
+    <string name="our_team">Our Team</string>
+    <string name="leafy_team">LEAFY TEAM</string>
 </resources>
