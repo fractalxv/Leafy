@@ -25,7 +25,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/ralewaymedium"
-        android:text="to this app"
+        android:text="@string/to_this_app"
         android:textColor="#707070"
         android:textSize="36sp"
         android:textStyle="normal"
