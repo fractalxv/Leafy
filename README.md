@@ -14,3 +14,13 @@ Adji Latifah Mahsa Hakim | C2449K3054 | Cloud Computing
 Myra T Karimah | C7012F1201 | Cloud Computing
 
 ## What is this? (*TBA*)
+
+### Web Setup (*WIP*)
+1. Activate the virtualenv **venv** by inserting the following:
+    ```
+    $ source venv/bin/activate
+    ```
+2. Execute Streamlit locally by inserting the following:
+    ```
+    $ streamlit run main.py
+    ```
