@@ -22,5 +22,13 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent("android.media.action.IMAGE_CAPTURE")
             startActivity(intent)
         }
+
+        binding.btnGallery.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_GET_CONTENT
+            intent.type = "image/*"
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
     }
 }
