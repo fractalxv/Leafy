@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedsApp">
         <activity
+            android:name=".DeveloperActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartActivity"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -21,5 +21,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, StartActivity::class.java)
             startActivity(intent)
         }
+        binding.btnLeafyteam.setOnClickListener {
+            val intent = Intent(this@MainActivity, DeveloperActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
