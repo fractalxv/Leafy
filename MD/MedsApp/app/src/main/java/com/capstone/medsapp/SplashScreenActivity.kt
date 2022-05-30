@@ -1,12 +1,10 @@
 package com.capstone.medsapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.Intent
-
-import android.R
+import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 
 
 class SplashScreenActivity : AppCompatActivity() {
