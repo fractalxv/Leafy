@@ -15,7 +15,7 @@ Myra T Karimah | C7012F1201 | Cloud Computing
 
 ## What is this? (*TBA*)
 
-# Web Setup (*WIP*)
+### Web Setup (*WIP*)
 1. Activate the virtualenv **venv** by inserting the following:
     ```
     $ source venv/bin/activate
