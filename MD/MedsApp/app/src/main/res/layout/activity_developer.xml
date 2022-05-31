@@ -1,75 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DeveloperActivity">
 
-    <ImageView
-        android:id="@+id/imgv_appname"
-        android:layout_width="175dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/leafy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_bangkit2022"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/ralewaymedium"
-        android:text="@string/bangkit"
-        android:textColor="#56958B"
-        android:textSize="36sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
+        <ImageView
+            android:id="@+id/imgv_appname"
+            android:layout_width="175dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/leafy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_2022"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/ralewaymedium"
-        android:text="@string/_2022"
-        android:textColor="#707070"
-        android:textSize="36sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_bangkit2022"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
+        <TextView
+            android:id="@+id/tv_2022"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/_2022"
+            android:textColor="#707070"
+            android:textSize="36sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toEndOf="@+id/tv_bangkit2022"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
 
-    <TextView
-        android:id="@+id/tv_capstonegroupname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/ralewaymedium"
-        android:text="@string/c22_ps221"
-        android:textColor="#56958B"
-        android:textSize="19sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bangkit2022" />
+        <TextView
+            android:id="@+id/tv_bangkit2022"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/bangkit"
+            android:textColor="#56958B"
+            android:textSize="36sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.332"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
 
-    <ImageView
-        android:id="@+id/imgv_line"
-        android:layout_width="65dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_capstonegroupname" />
+        <ImageView
+            android:id="@+id/imgv_line1"
+            android:layout_width="65dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_capstonegroupname" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_capstonegroupname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/c22_ps221"
+            android:textColor="#56958B"
+            android:textSize="19sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bangkit2022" />
+
+        <TextView
+            android:id="@+id/tv_devs1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/devs"
+            android:textColor="#707070"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toEndOf="@+id/tv_mobile"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_line1" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/mobile"
+            android:textColor="#56958B"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.336"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_line1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image1"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mobile"
+            tools:src="@tools:sample/avatars" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image2"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toEndOf="@+id/profile_image1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_devs1"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_rival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/rival_irawan"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image1" />
+
+        <TextView
+            android:id="@+id/tv_gilang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/gilang_zhanuardy"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toEndOf="@+id/tv_rival"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image2" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="300dp"
+            android:layout_height="1dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:background="#707070"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rival" />
+
+        <TextView
+            android:id="@+id/tv_devs2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/devs"
+            android:textColor="#707070"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toEndOf="@+id/tv_mlearning"
+            app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+        <TextView
+            android:id="@+id/tv_mlearning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/mlearning"
+            android:textColor="#56958B"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.337"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image3"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mlearning"
+            tools:src="@tools:sample/avatars" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image4"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toEndOf="@+id/profile_image1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_devs2"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_reza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="48dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/reza_anggana"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fadhilah"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image3" />
+
+        <TextView
+            android:id="@+id/tv_fadhilah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/fadhilah_akhbar"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.765"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image4" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="300dp"
+            android:layout_height="1dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:background="#707070"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reza" />
+
+        <TextView
+            android:id="@+id/tv_devs3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/devs"
+            android:textColor="#707070"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toEndOf="@+id/tv_cloud"
+            app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+        <TextView
+            android:id="@+id/tv_cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/cloud"
+            android:textColor="#56958B"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.337"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image5"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cloud"
+            tools:src="@tools:sample/avatars" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image6"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rival"
+            app:civ_border_color="#56958B"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toEndOf="@+id/profile_image5"
+            app:layout_constraintTop_toBottomOf="@+id/tv_devs3"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_myra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/myra_karimah"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image5" />
+
+        <TextView
+            android:id="@+id/tv_latifah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/adjie_latifah"
+            android:textColor="#56958B"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toEndOf="@+id/tv_myra"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image6" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="300dp"
+            android:layout_height="1dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_myra" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
