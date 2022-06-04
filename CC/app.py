@@ -17,6 +17,11 @@ print("Keras Version ",keras_lib.__version__)
 
 app = flask.Flask(__name__)
 
+@app.before_first_request
+def load_model_keras_model():
+    global model
+    model = load_model('../herbs-model.py')
+
 global CATEGORIES
 CATEGORIES = ['JAMBU BIJI', 
               'KARI',
