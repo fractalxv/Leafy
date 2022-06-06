@@ -10,12 +10,17 @@ import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import java.io.File
+import android.graphics.Bitmap
+
+
+
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding
@@ -38,18 +43,26 @@ class StartActivity : AppCompatActivity() {
     }
 
     private fun setupAction(){
-        binding.btnCamera.setOnClickListener {
-            startTakePhoto()
-
-        }
-
+        binding.btnCamera.setOnClickListener { startTakePhoto() }
         binding.btnGallery.setOnClickListener { startGallery() }
-//        binding.btnSubmit?.setOnClickListener {  }
+        binding.btnSubmit?.setOnClickListener { submitPhoto() }
     }
 
-//    private fun submitPhoto(){
-//        val intent = Intent()
-//    }
+    private fun submitPhoto(){
+        val myFile = File(currentPhotoPath)
+        getFile = myFile
+        Log.d("fotoStart", getFile.toString())
+
+        /*val intent = Intent(this@StartActivity, ResultActivity::class.java)
+        intent.putExtra("image", getFile)
+        startActivity(intent)*/
+        binding.previewImage.buildDrawingCache()
+        val bitmap: Bitmap = binding.previewImage.getDrawingCache()
+
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("image", bitmap)
+        startActivity(intent)
+    }
 
     private fun startTakePhoto() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
