@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".StartActivity">
 
-    <ImageView
-        android:id="@+id/imgv_appname"
-        android:layout_width="175dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/leafy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_take"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/ralewaymedium"
-        android:text="@string/take"
-        android:textColor="#56958B"
-        android:textSize="32sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
+        <ImageView
+            android:id="@+id/imgv_appname"
+            android:layout_width="175dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/leafy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_picturefrom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/ralewaymedium"
-        android:text="@string/picture_from"
-        android:textColor="#707070"
-        android:textSize="32sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_take"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_appname" />
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="303dp"
+            android:layout_height="286dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/preview_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_appname"
+            app:srcCompat="@drawable/ic_place_holder" />
 
-    <ImageButton
-        android:id="@+id/btn_camera"
-        android:layout_width="244dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="44dp"
-        android:backgroundTint="#80FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@drawable/buttoncamera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_picturefrom" />
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="244dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#80FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/buttoncamera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previewImage" />
 
-    <ImageButton
-        android:id="@+id/btn_gallery"
-        android:layout_width="244dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#80FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@drawable/buttongallery"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
+        <ImageButton
+            android:id="@+id/btn_gallery"
+            android:layout_width="244dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#80FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/buttongallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="219dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_gallery" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="300dp"
+            android:layout_height="1dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="90dp"
+            android:background="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

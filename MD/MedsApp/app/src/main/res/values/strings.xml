@@ -22,4 +22,7 @@
     <string name="cloud">Cloud</string>
     <string name="myra_karimah">Myra Karimah</string>
     <string name="adjie_latifah">Adjie Latifah</string>
+    <string name="processing">Processing...</string>
+    <string name="preview_image">Preview Image</string>
+    <string name="submit">submit</string>
 </resources>
