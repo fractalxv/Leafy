@@ -1,31 +1,26 @@
 package com.capstone.medsapp
 
 import android.Manifest
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.capstone.medsapp.databinding.ActivityStartBinding
-
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.capstone.medsapp.databinding.ActivityStartBinding
 import java.io.File
-import android.graphics.Bitmap
-
-
-
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding
-    private lateinit var currentPhotoPath: String
+    private var currentPhotoPath: String? = null
     private var getFile: File? = null
+    private var selectedImg: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,19 +37,28 @@ class StartActivity : AppCompatActivity() {
         setupAction()
     }
 
-    private fun setupAction(){
+    private fun setupAction() {
         binding.btnCamera.setOnClickListener { startTakePhoto() }
         binding.btnGallery.setOnClickListener { startGallery() }
-        binding.btnSubmit?.setOnClickListener { submitPhoto() }
+        binding.btnSubmit.setOnClickListener { submitPhoto() }
     }
 
-    private fun submitPhoto(){
-        val myFile = File(currentPhotoPath)
-        getFile = myFile
+    private fun submitPhoto() {
+        if (currentPhotoPath != null) {
+            val myFile = File(currentPhotoPath!!)
+            getFile = myFile
 
-        val intent = Intent(this@StartActivity, ResultActivity::class.java)
-        intent.putExtra("image", getFile)
-        startActivity(intent)
+            val intent = Intent(this@StartActivity, ResultActivity::class.java)
+            intent.putExtra("image", getFile)
+            startActivity(intent)
+            currentPhotoPath = null
+        } else if (selectedImg != null) {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setClass(this@StartActivity, ResultActivity::class.java)
+            intent.putExtra("image", getFile)
+            startActivity(intent)
+            selectedImg = null
+        }
     }
 
     private fun startTakePhoto() {
@@ -85,11 +89,11 @@ class StartActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == RESULT_OK) {
-            val myFile = File(currentPhotoPath)
+            val myFile = File(currentPhotoPath!!)
             getFile = myFile
 
             val result = BitmapFactory.decodeFile(getFile?.path)
-            binding.previewImage?.setImageBitmap(result)
+            binding.previewImage.setImageBitmap(result)
         }
     }
 
@@ -97,13 +101,13 @@ class StartActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            val selectedImg: Uri = result.data?.data as Uri
+            selectedImg = result.data?.data as Uri
 
-            val myFile = uriToFile(selectedImg, this@StartActivity)
+            val myFile = uriToFile(selectedImg!!, this@StartActivity)
 
             getFile = myFile
 
-            binding.previewImage?.setImageURI(selectedImg)
+            binding.previewImage.setImageURI(selectedImg)
         }
     }
 
@@ -121,7 +125,7 @@ class StartActivity : AppCompatActivity() {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
-                    "Tidak mendapatkan permission.",
+                    "Permission not granted.",
                     Toast.LENGTH_SHORT
                 ).show()
                 finish()

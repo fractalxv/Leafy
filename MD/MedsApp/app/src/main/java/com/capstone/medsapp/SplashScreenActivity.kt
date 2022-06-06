@@ -3,21 +3,17 @@ package com.capstone.medsapp
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.capstone.medsapp.R.layout.activity_splash_screen)
-        // Hide the status bar.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        setContentView(R.layout.activity_splash_screen)
         actionBar?.hide()
-        val handler = Handler()
-        handler.postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
-        }, 3000L)
+        }, 3000)
     }
 }
