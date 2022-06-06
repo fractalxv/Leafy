@@ -51,16 +51,9 @@ class StartActivity : AppCompatActivity() {
     private fun submitPhoto(){
         val myFile = File(currentPhotoPath)
         getFile = myFile
-        Log.d("fotoStart", getFile.toString())
 
-        /*val intent = Intent(this@StartActivity, ResultActivity::class.java)
+        val intent = Intent(this@StartActivity, ResultActivity::class.java)
         intent.putExtra("image", getFile)
-        startActivity(intent)*/
-        binding.previewImage.buildDrawingCache()
-        val bitmap: Bitmap = binding.previewImage.getDrawingCache()
-
-        val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra("image", bitmap)
         startActivity(intent)
     }
 
