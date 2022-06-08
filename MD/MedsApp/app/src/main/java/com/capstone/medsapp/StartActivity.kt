@@ -69,24 +69,53 @@ class StartActivity : AppCompatActivity() {
 
     private fun processML(){
         val bitmap = BitmapFactory.decodeFile(getFile?.path)
-        var resized: Bitmap= Bitmap.createScaledBitmap(bitmap,224,224,true)
+        val resized: Bitmap= Bitmap.createScaledBitmap(bitmap,224,224,false)
         val model = Leafy.newInstance(this)
 
-// Creates inputs for reference.
+        val fileName = "label.txt"
+        val inputString = application?.assets?.open(fileName)?.bufferedReader().use {
+            it?.readText()
+        }
+        val townList = inputString?.split("\n")
+
         val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
 
-        var tbuffer=TensorImage.fromBitmap(resized)
-        var byteBuffer=tbuffer.buffer
-
+        val tensorImage = TensorImage(DataType.FLOAT32)
+        tensorImage.load(resized)
+        val byteBuffer = tensorImage.buffer
         inputFeature0.loadBuffer(byteBuffer)
 
-// Runs model inference and gets result.
         val outputs = model.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
-        Log.d("ML", outputFeature0.toString())
 
-// Releases model resources if no longer used.
+        if (townList != null) {
+            Log.d("Nama", "${townList[0]} : ${outputFeature0.floatArray[0]}\n" +
+                    "${townList[1]} : ${outputFeature0.floatArray[1]}\n" +
+                    "${townList[2]} : ${outputFeature0.floatArray[2]}\n" +
+                    "${townList[3]} : ${outputFeature0.floatArray[3]}\n" +
+                    "${townList[4]} : ${outputFeature0.floatArray[4]}\n" +
+                    "${townList[5]} : ${outputFeature0.floatArray[5]}\n" +
+                    "${townList[6]} : ${outputFeature0.floatArray[6]}\n")
+        }
+
+        val max  = getMax(outputFeature0.floatArray)
+
+        binding.tvPicture.text = townList?.get(max)
+
         model.close()
+    }
+
+    private fun getMax(arr: FloatArray): Int{
+        var idx = 0
+        var min = 0.0f
+
+        for(i in 0..6){
+            if(arr[i]>min){
+                idx = i
+                min = arr[i]
+            }
+        }
+        return idx
     }
 
     private fun startTakePhoto() {
