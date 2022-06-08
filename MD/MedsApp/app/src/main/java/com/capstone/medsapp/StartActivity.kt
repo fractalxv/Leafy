@@ -3,9 +3,12 @@ package com.capstone.medsapp
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +16,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.capstone.medsapp.databinding.ActivityStartBinding
+import com.capstone.medsapp.ml.Leafy
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
 
 class StartActivity : AppCompatActivity() {
@@ -45,18 +52,41 @@ class StartActivity : AppCompatActivity() {
         if (currentPhotoPath != null) {
             val myFile = File(currentPhotoPath!!)
             getFile = myFile
-
+            processML()
             val intent = Intent(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             currentPhotoPath = null
         } else if (selectedImg != null) {
             val intent = Intent(Intent.ACTION_VIEW)
+            processML()
             intent.setClass(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             selectedImg = null
         }
+    }
+
+    private fun processML(){
+        val bitmap = BitmapFactory.decodeFile(getFile?.path)
+        var resized: Bitmap= Bitmap.createScaledBitmap(bitmap,224,224,true)
+        val model = Leafy.newInstance(this)
+
+// Creates inputs for reference.
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+
+        var tbuffer=TensorImage.fromBitmap(resized)
+        var byteBuffer=tbuffer.buffer
+
+        inputFeature0.loadBuffer(byteBuffer)
+
+// Runs model inference and gets result.
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+        Log.d("ML", outputFeature0.toString())
+
+// Releases model resources if no longer used.
+        model.close()
     }
 
     private fun startTakePhoto() {
