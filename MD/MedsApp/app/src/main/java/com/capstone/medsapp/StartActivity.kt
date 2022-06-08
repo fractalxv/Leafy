@@ -3,7 +3,6 @@ package com.capstone.medsapp
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -40,7 +39,6 @@ class StartActivity : AppCompatActivity() {
     private fun setupAction() {
         binding.btnCamera.setOnClickListener { startTakePhoto() }
         binding.btnGallery.setOnClickListener { startGallery() }
-        binding.btnSubmit.setOnClickListener { submitPhoto() }
     }
 
     private fun submitPhoto() {
@@ -48,13 +46,13 @@ class StartActivity : AppCompatActivity() {
             val myFile = File(currentPhotoPath!!)
             getFile = myFile
 
-            val intent = Intent(this@StartActivity, ResultActivity::class.java)
+            val intent = Intent(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             currentPhotoPath = null
         } else if (selectedImg != null) {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.setClass(this@StartActivity, ResultActivity::class.java)
+            intent.setClass(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             selectedImg = null
@@ -92,8 +90,7 @@ class StartActivity : AppCompatActivity() {
             val myFile = File(currentPhotoPath!!)
             getFile = myFile
 
-            val result = BitmapFactory.decodeFile(getFile?.path)
-            binding.previewImage.setImageBitmap(result)
+            submitPhoto()
         }
     }
 
@@ -107,7 +104,7 @@ class StartActivity : AppCompatActivity() {
 
             getFile = myFile
 
-            binding.previewImage.setImageURI(selectedImg)
+            submitPhoto()
         }
     }
 
