@@ -23,4 +23,3 @@ Myra T Karimah | C7012F1201 | Cloud Computing
 2. Execute Streamlit locally by inserting the following:
     ```
     $ streamlit run main.py -->
-    ```
