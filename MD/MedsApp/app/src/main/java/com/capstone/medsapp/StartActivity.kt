@@ -3,10 +3,12 @@ package com.capstone.medsapp
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.capstone.medsapp.databinding.ActivityStartBinding
+import com.capstone.medsapp.ml.Leafy
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
 
 class StartActivity : AppCompatActivity() {
@@ -40,25 +46,76 @@ class StartActivity : AppCompatActivity() {
     private fun setupAction() {
         binding.btnCamera.setOnClickListener { startTakePhoto() }
         binding.btnGallery.setOnClickListener { startGallery() }
-        binding.btnSubmit.setOnClickListener { submitPhoto() }
     }
 
     private fun submitPhoto() {
         if (currentPhotoPath != null) {
             val myFile = File(currentPhotoPath!!)
             getFile = myFile
-
-            val intent = Intent(this@StartActivity, ResultActivity::class.java)
+            processML()
+            val intent = Intent(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             currentPhotoPath = null
         } else if (selectedImg != null) {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.setClass(this@StartActivity, ResultActivity::class.java)
+            processML()
+            intent.setClass(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
             startActivity(intent)
             selectedImg = null
         }
+    }
+
+    private fun processML(){
+        val bitmap = BitmapFactory.decodeFile(getFile?.path)
+        val resized: Bitmap= Bitmap.createScaledBitmap(bitmap,224,224,false)
+        val model = Leafy.newInstance(this)
+
+        val fileName = "label.txt"
+        val inputString = application?.assets?.open(fileName)?.bufferedReader().use {
+            it?.readText()
+        }
+        val townList = inputString?.split("\n")
+
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+
+        val tensorImage = TensorImage(DataType.FLOAT32)
+        tensorImage.load(resized)
+        val byteBuffer = tensorImage.buffer
+        inputFeature0.loadBuffer(byteBuffer)
+
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+        if (townList != null) {
+            Log.d("Nama", "${townList[0]} : ${outputFeature0.floatArray[0]}\n" +
+                    "${townList[1]} : ${outputFeature0.floatArray[1]}\n" +
+                    "${townList[2]} : ${outputFeature0.floatArray[2]}\n" +
+                    "${townList[3]} : ${outputFeature0.floatArray[3]}\n" +
+                    "${townList[4]} : ${outputFeature0.floatArray[4]}\n" +
+                    "${townList[5]} : ${outputFeature0.floatArray[5]}\n" +
+                    "${townList[6]} : ${outputFeature0.floatArray[6]}\n")
+        }
+
+        val max  = getMax(outputFeature0.floatArray)
+
+        binding.tvPicture.text = townList?.get(max)
+
+        model.close()
+    }
+
+    private fun getMax(arr: FloatArray): Int{
+        var idx = 0
+        var min = 0.0f
+
+        for(i in 0..6){
+            if(arr[i]>min){
+                idx = i
+                min = arr[i]
+            }
+        }
+        return idx
     }
 
     private fun startTakePhoto() {
@@ -92,8 +149,7 @@ class StartActivity : AppCompatActivity() {
             val myFile = File(currentPhotoPath!!)
             getFile = myFile
 
-            val result = BitmapFactory.decodeFile(getFile?.path)
-            binding.previewImage.setImageBitmap(result)
+            submitPhoto()
         }
     }
 
@@ -107,7 +163,7 @@ class StartActivity : AppCompatActivity() {
 
             getFile = myFile
 
-            binding.previewImage.setImageURI(selectedImg)
+            submitPhoto()
         }
     }
 

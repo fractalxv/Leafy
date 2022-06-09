@@ -25,4 +25,8 @@
     <string name="processing">Processing...</string>
     <string name="preview_image">Preview Image</string>
     <string name="submit">submit</string>
+    <string name="your">Your</string>
+    <string name="picture">Picture</string>
+    <string name="nama_daun">Nama Daun</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>
