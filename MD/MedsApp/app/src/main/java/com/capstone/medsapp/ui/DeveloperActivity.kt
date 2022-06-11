@@ -1,7 +1,8 @@
-package com.capstone.medsapp
+package com.capstone.medsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.medsapp.R
 
 class DeveloperActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

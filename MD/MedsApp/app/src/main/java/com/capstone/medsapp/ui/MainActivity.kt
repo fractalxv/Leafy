@@ -1,4 +1,4 @@
-package com.capstone.medsapp
+package com.capstone.medsapp.ui
 
 import android.content.ContentValues
 import android.content.Intent
@@ -16,19 +16,13 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_NOTE = "extra_note"
-        const val EXTRA_POSITION = "extra_position"
-        const val RESULT_ADD = 101
-        const val RESULT_UPDATE = 201
-        const val RESULT_DELETE = 301
-        const val ALERT_DIALOG_CLOSE = 10
-        const val ALERT_DIALOG_DELETE = 20
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        noteHelper=NoteHelper(this);
+        noteHelper = NoteHelper(this);
         noteHelper = NoteHelper.getInstance(applicationContext)
         noteHelper.open()
 

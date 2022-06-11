@@ -1,4 +1,4 @@
-package com.capstone.medsapp
+package com.capstone.medsapp.ui
 
 import android.Manifest
 import android.content.Intent
@@ -15,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.capstone.medsapp.createCustomTempFile
 import com.capstone.medsapp.databinding.ActivityStartBinding
 import com.capstone.medsapp.ml.Leafy
+import com.capstone.medsapp.uriToFile
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -27,6 +29,7 @@ class StartActivity : AppCompatActivity() {
     private var currentPhotoPath: String? = null
     private var getFile: File? = null
     private var selectedImg: Uri? = null
+    private var max: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +58,7 @@ class StartActivity : AppCompatActivity() {
             processML()
             val intent = Intent(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
+            intent.putExtra("array", max)
             startActivity(intent)
             currentPhotoPath = null
         } else if (selectedImg != null) {
@@ -62,6 +66,7 @@ class StartActivity : AppCompatActivity() {
             processML()
             intent.setClass(this@StartActivity, ProcessActivity::class.java)
             intent.putExtra("image", getFile)
+            intent.putExtra("array", max)
             startActivity(intent)
             selectedImg = null
         }
@@ -98,9 +103,7 @@ class StartActivity : AppCompatActivity() {
                     "${townList[6]} : ${outputFeature0.floatArray[6]}\n")
         }
 
-        val max  = getMax(outputFeature0.floatArray)
-
-        binding.tvPicture.text = townList?.get(max)
+        max  = getMax(outputFeature0.floatArray)
 
         model.close()
     }
