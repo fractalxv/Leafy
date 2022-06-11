@@ -41,7 +41,7 @@ def img_process(model, img):
 
 @app.route('/')
 def index():
-    return {"Hello! This is a Leafy backend API :D"}, 200
+    return {"Hello!": "This is a Leafy backend API :D"}, 200
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -71,5 +71,6 @@ def predict():
     #     return jsonify({"Error": "Method not allowed"}), 400
 
 #  eksekusi
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    # app.run(debug=True)
