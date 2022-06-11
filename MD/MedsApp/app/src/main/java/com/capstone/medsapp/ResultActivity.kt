@@ -19,4 +19,7 @@ class ResultActivity : AppCompatActivity() {
 
         binding.previewImage.setImageBitmap(bitmap)
     }
+
+    private fun showData(){
+    }
 }

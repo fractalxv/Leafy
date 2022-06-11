@@ -77,19 +77,33 @@
             app:layout_constraintTop_toBottomOf="@+id/previewImage" />
 
         <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/result"
+            android:textColor="#707070"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+        <TextView
             android:id="@+id/tv_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="66dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/ralewaymedium"
             android:text="@string/nama_daun"
             android:textColor="#56958B"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/separator" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
         <ImageView
             android:id="@+id/daunImage"
@@ -106,18 +120,73 @@
 
         <TextView
             android:id="@+id/tv_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_width="312dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/ralewaymedium"
             android:text="@string/deskripsi"
             android:textColor="#707070"
             android:textSize="14sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/daunImage" />
+
+        <TextView
+            android:id="@+id/tv_khasiat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/khasiat"
+            android:textColor="#56958B"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+        <TextView
+            android:id="@+id/tv_daun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/picture"
+            android:textColor="#707070"
+            android:textSize="32sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/tv_khasiat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+        <TextView
+            android:id="@+id/tv_isikhasiat"
+            android:layout_width="312dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/ralewaymedium"
+            android:text="@string/deskripsi"
+            android:textColor="#707070"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_daun" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="300dp"
+            android:layout_height="1dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="200dp"
+            android:background="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.549"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_isikhasiat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

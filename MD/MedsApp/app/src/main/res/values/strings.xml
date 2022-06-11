@@ -29,4 +29,6 @@
     <string name="picture">Picture</string>
     <string name="nama_daun">Nama Daun</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="result">Result</string>
+    <string name="khasiat">Khasiat</string>
 </resources>
