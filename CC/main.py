@@ -7,6 +7,9 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import io as BytesIO
 
+#init flask server
+app = Flask(__name__)
+
 # preparing image post request
 ALLOWED_EXTENSIONS = {'JPG','JPEG','PNG'}
 model = tf.keras.models.load_model('Leafy.h5')
@@ -37,8 +40,6 @@ def img_process(model, img):
     confidence = round(100 * (np.max(prediction[0])), 2)
     return predict_class, confidence
 
-#init flask server
-app = Flask(__name__)
 
 @app.route('/')
 def index():
