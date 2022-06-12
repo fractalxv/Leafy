@@ -105,24 +105,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
-        <ImageView
-            android:id="@+id/daunImage"
-            android:layout_width="240dp"
-            android:layout_height="216dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/preview_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-            app:srcCompat="@drawable/ic_place_holder" />
-
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="312dp"
             android:layout_height="125dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/ralewaymedium"
             android:text="@string/deskripsi"
             android:textColor="#707070"
@@ -131,7 +118,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/daunImage" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
 
         <TextView
             android:id="@+id/tv_khasiat"
@@ -181,7 +168,7 @@
             android:layout_width="300dp"
             android:layout_height="1dip"
             android:layout_centerVertical="true"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="30dp"
             android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.549"

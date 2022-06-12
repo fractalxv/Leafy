@@ -27,6 +27,7 @@ class NoteHelper(context: Context) {
     fun open() {
         database = dataBaseHelper.writableDatabase
     }
+
     fun close() {
         dataBaseHelper.close()
         if (database.isOpen)
@@ -41,7 +42,8 @@ class NoteHelper(context: Context) {
             null,
             null,
             null,
-            "$_ID ASC")
+            "$_ID ASC"
+        )
     }
 
     fun queryById(id: String): Cursor {
@@ -53,18 +55,11 @@ class NoteHelper(context: Context) {
             null,
             null,
             null,
-            null)
+            null
+        )
     }
 
     fun insert(values: ContentValues?): Long {
         return database.insert(DATABASE_TABLE, null, values)
-    }
-
-    fun update(id: String, values: ContentValues?): Int {
-        return database.update(DATABASE_TABLE, values, "$_ID = ?", arrayOf(id))
-    }
-
-    fun deleteById(id: String): Int {
-        return database.delete(DATABASE_TABLE, "$_ID = '$id'", null)
     }
 }
