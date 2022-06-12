@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # preparing image post request
 ALLOWED_EXTENSIONS = {'JPG','JPEG','PNG'}
-model = tf.keras.models.load_model('model/Leafy.h5')
+model = tf.keras.models.load_model('Leafy.h5')
 
 def allowed_file(filename):
     return '.' in filename and \
