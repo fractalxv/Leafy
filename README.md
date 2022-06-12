@@ -19,8 +19,13 @@ Myra T Karimah | C7012F1201 | Cloud Computing
 
 ## What is this? (*TBA*)
 
+| Splash Screen  | Main Screen | Start Screen | Process Screen |
+| ------------- | ------------- | ------------- | ------------- |
+|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347347132436/Splashscreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347900751932/MainScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347003187230/StartScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347653296181/ProcessScreen.jpg width='230'>|
 
-
+| Splash Screen  | Main Screen | 
+| ------------- | ------------- |
+|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985615739786518568/ResultScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613348190183425/CapstoneGroupScreen.jpg width='230'>|
 <!-- ### Web Setup (*WIP*)
 1. Activate the virtualenv **venv** by inserting the following:
     ```
