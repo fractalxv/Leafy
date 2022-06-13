@@ -7,6 +7,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import io as BytesIO
 
+#init flask server
 app = Flask(__name__)
 
 # preparing image post request
@@ -38,6 +39,7 @@ def img_process(model, img):
     predict_class = label_class[np.argmax(prediction[0])]
     confidence = round(100 * (np.max(prediction[0])), 2)
     return predict_class, confidence
+
 
 @app.route('/')
 def index():
