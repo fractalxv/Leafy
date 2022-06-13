@@ -19,7 +19,7 @@ Our Project is a simple android application that can identify and recognize the 
 
 ## Machine Learning Docs📝
 ### Data Preprocessing
-Dataset : link dataset [link dataset](https://drive.google.com/file/d/1dEWuf9-8r_3FqjLAlqt_Uqw-J0wLj78D/view?usp=sharing)
+Dataset : [link dataset](https://drive.google.com/file/d/1dEWuf9-8r_3FqjLAlqt_Uqw-J0wLj78D/view?usp=sharing)
 We use image data generator with data augmentation for reduce overfitting. We also split dataset into training and validation sets with 80:20 split.
 
 ### Training Model
