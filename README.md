@@ -44,6 +44,16 @@ Link: https://drive.google.com/drive/folders/19938C6lFmV9CYn9JlC22N_hSjFozUFdQ?u
 | ------------- | ------------- |
 |<img src=https://cdn.discordapp.com/attachments/740649734104154175/985615739786518568/ResultScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613348190183425/CapstoneGroupScreen.jpg width='230'>|
 
+### How Our App Works
+1. Download the app from this [link](https://github.com/fractalxv/Leafy/releases/download/v1/Leafy.apk)
+2. Open the app
+3. Press Start
+4. Select which of the method for the picture to be taken
+5. If you select camera, picture the plant by yourself
+6. If you select gallery, choose yout picture on the gallery
+7. Happy reading!
+ 
+
 ## Cloud Computing Docs📝
 For more detailed process about deployment, you can access it here [here](https://github.com/fractalxv/Leafy/blob/master/CC/README.md)
 
