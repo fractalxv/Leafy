@@ -108,7 +108,7 @@
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="312dp"
-            android:layout_height="125dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/ralewaymedium"
             android:text="@string/deskripsi"
@@ -151,7 +151,7 @@
         <TextView
             android:id="@+id/tv_isikhasiat"
             android:layout_width="312dp"
-            android:layout_height="125dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/ralewaymedium"
             android:text="@string/deskripsi"
