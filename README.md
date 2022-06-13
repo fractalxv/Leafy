@@ -26,7 +26,7 @@ Our Project is a simple android application that can identify and recognize the 
 |<img src=https://cdn.discordapp.com/attachments/740649734104154175/985615739786518568/ResultScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613348190183425/CapstoneGroupScreen.jpg width='230'>|
 
 ## Cloud Computing Docs📝
-
+For more detailed process about deployment, you can access it here [here](https://github.com/fractalxv/Leafy/blob/master/CC/README.md)
 
 
 ## The Gang🍀
