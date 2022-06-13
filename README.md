@@ -18,6 +18,20 @@ Our Project is a simple android application that can identify and recognize the 
 <img src=https://cdn.discordapp.com/attachments/740649734104154175/985716893115641916/unknown.png width='570'>
 
 ## Machine Learning Docs📝
+### Data Preprocessing
+Dataset : (https://drive.google.com/file/d/1dEWuf9-8r_3FqjLAlqt_Uqw-J0wLj78D/view?usp=sharing)
+We use image data generator with data augmentation for reduce overfitting. We also split dataset into training and validation sets with 80:20 split.
+
+### Training Model
+Our model will be consisting CNN, Dropout, and Flatten Layers.
+Our model is compiled woth adam optimizer and for loss using categorical crossentrophy
+
+### Predicting the model
+Our model have achieved accuracy for training : 98.12℅ and validation accuracy : 90.5℅
+
+### Saving Model
+We save our model with .h5 and.tflite. (https://drive.google.com/drive/folders/19938C6lFmV9CYn9JlC22N_hSjFozUFdQ?usp=sharing)
+ 
 ## Mobile Development Docs📝
 
 | Splash Screen  | Main Screen | Start Screen | Process Screen |
