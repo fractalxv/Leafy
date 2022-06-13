@@ -13,6 +13,9 @@ The popularity of herbal medicine has increased worldwide. According to pom.go.i
 
 Our Project is a simple android application that can identify and recognize the types of herbs automatically with their use using CNN with mobilenet architecture and 500 images for 11 types of leaves of herbal plants. Based on the test results on 30 new images obtained an accuracy rate of 86.7%, alongside with details about how the herbs work and how to process it (in a simple way)
 
+<h2 align="center">Tech Stack that we use for this project</h2>
+<p align="center">
+<img src=https://cdn.discordapp.com/attachments/740649734104154175/985716893115641916/unknown.png width='570'>
 
 ## Machine Learning Docs📝
 ## Mobile Development Docs📝
