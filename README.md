@@ -24,7 +24,7 @@ Our Project is a simple android application that can identify and recognize the 
 | ------------- | ------------- | ------------- | ------------- |
 |<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347347132436/Splashscreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347900751932/MainScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347003187230/StartScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613347653296181/ProcessScreen.jpg width='230'>|
 
-| Result Screen  | Main Screen | 
+| Result Screen  | Developer Screen | 
 | ------------- | ------------- |
 |<img src=https://cdn.discordapp.com/attachments/740649734104154175/985615739786518568/ResultScreen.jpg width='230'>|<img src=https://cdn.discordapp.com/attachments/740649734104154175/985613348190183425/CapstoneGroupScreen.jpg width='230'>|
 
